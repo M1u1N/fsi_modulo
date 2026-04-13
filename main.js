@@ -12,10 +12,10 @@ async function main() {
   try {
     const fileStats = await stat(filePath);
 
-    const content = await readFile(filePath, "utf-8");
+    const content = await readFile(filePath,"utf-8"); //maybe utf-8
 
     const lines = content.split("\n").length;
-    const words = content.trim().split(/\s+/).filter(Boolean).length; //what the hell
+    const words = content.trim().split(/\s+/).filter(Boolean).length; 
     const characters = content.length;
     const size = fileStats.size;
     const lastModified = fileStats.mtime;
@@ -31,7 +31,7 @@ async function main() {
     if (err.code === "ENOENT") {
       console.error("Datei nicht gefunden.");
     } else {
-      console.error("Fehler beim Verarbeiten der Datei:");
+      console.error("Fehler beim Verarbeiten:");
       console.error(err.message);
     }
     process.exit(1);
