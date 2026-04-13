@@ -39,3 +39,5 @@ async function main() {
 }
 
 main();
+
+// to test: node main.js example.txt
