@@ -1,4 +1,3 @@
-// datei-stats.js
 import { readFile, stat } from "fs/promises";
 
 async function main() {
@@ -12,7 +11,7 @@ async function main() {
   try {
     const fileStats = await stat(filePath);
 
-    const content = await readFile(filePath,"utf-8"); //maybe utf-8
+    const content = await readFile(filePath,"utf-8");
 
     const lines = content.split("\n").length;
     const words = content.trim().split(/\s+/).filter(Boolean).length; 
@@ -20,7 +19,7 @@ async function main() {
     const size = fileStats.size;
     const lastModified = fileStats.mtime;
 
-    // Ausgabe
+    
     console.log(`Datei: ${filePath}`);
     console.log(`Zeilen: ${lines}`);
     console.log(`Wörter: ${words}`);
@@ -40,4 +39,4 @@ async function main() {
 
 main();
 
-// to test: node main.js example.txt
+//node main.js example.txt
