@@ -1,25 +1,21 @@
 import { readFile, stat } from "fs/promises";
 
-async function main() {
-  const filePath = process.argv[2];
-
+export async function main(filePath = process.argv[2]) {  // ✅ nur diese Zeile
   if (!filePath) {
     console.error("Bitte einen Dateipfad angeben.");
-    process.exit(1);
+    return;
   }
 
   try {
     const fileStats = await stat(filePath);
-
-    const content = await readFile(filePath,"utf-8");
+    const content = await readFile(filePath, "utf-8");
 
     const lines = content.split("\n").length;
-    const words = content.trim().split(/\s+/).filter(Boolean).length; 
+    const words = content.trim().split(/\s+/).filter(Boolean).length;
     const characters = content.length;
     const size = fileStats.size;
     const lastModified = fileStats.mtime;
 
-    
     console.log(`Datei: ${filePath}`);
     console.log(`Zeilen: ${lines}`);
     console.log(`Wörter: ${words}`);
@@ -36,7 +32,3 @@ async function main() {
     process.exit(1);
   }
 }
-
-main();
-
-//node main.js example.txt

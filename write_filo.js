@@ -21,8 +21,8 @@ export async function writeFileSafe(filePath, data) {
   }
 }
 
-async function main() {
+export async function writy() {
  await writeFileSafe("./example.txt", "Poschi ridu");
  console.log("Datei geschrieben");
 }
-main();
+//writy();

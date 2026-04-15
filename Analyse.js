@@ -1,7 +1,7 @@
-const fs = require("fs").promises;
-const path = require("path");
+import { promises as fs } from "fs";
+import path from "path";
 
-async function analyzeDirectory(dir, extensions = [], recursive = false) {
+export async function analyzeDirectory(dir, extensions = [], recursive = false) {
   try {
     const entries = await fs.readdir(dir, { withFileTypes: true });
 
@@ -36,4 +36,4 @@ async function analyzeDirectory(dir, extensions = [], recursive = false) {
 }
 
 // Beispiel-Aufruf:
-analyzeDirectory("./meinOrdner", [".js", ".json"], true);
+//analyzeDirectory("./meinOrdner", [".js", ".json"], true);
