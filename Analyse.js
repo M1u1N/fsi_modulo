@@ -34,6 +34,3 @@ export async function analyzeDirectory(dir, extensions = [], recursive = false) 
     }
   }
 }
-
-// Beispiel-Aufruf:
-//analyzeDirectory("./meinOrdner", [".js", ".json"], true);
