@@ -1,6 +1,6 @@
 import { readFile, stat } from "fs/promises";
 
-export async function main(filePath = process.argv[2]) {  // ✅ nur diese Zeile
+export async function main(filePath = process.argv[2]) {
   if (!filePath) {
     console.error("Bitte einen Dateipfad angeben.");
     return;
