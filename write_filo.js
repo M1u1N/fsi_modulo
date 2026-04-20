@@ -3,7 +3,6 @@ import { randomUUID } from "crypto";
 import path from "path";
 
 export async function writeFileSafe(filePath, data) {
-  // Temporären Dateinamen im gleichen Ordner erzeugen
   const dir = path.dirname(filePath);
   const tempFile = path.join(dir, `.tmp-${randomUUID()}`);
 
@@ -22,7 +21,7 @@ export async function writeFileSafe(filePath, data) {
 }
 
 export async function writy() {
- await writeFileSafe("./example.txt", "Poschi ridu");
+ await writeFileSafe("./example.txt", "hallo");
  console.log("Datei geschrieben");
 }
 //writy();
